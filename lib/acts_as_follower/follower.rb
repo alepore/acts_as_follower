@@ -73,6 +73,9 @@ module ActsAsFollower #:nodoc:
         if options.has_key?(:limit)
           followables = followables.limit(options[:limit])
         end
+	if options.has_key?(:offset)
+          followables = followables.offset(options[:offset])
+        end
         if options.has_key?(:includes)
           followables = followables.includes(options[:includes])
         end
